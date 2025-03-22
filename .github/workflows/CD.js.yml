@@ -9,7 +9,7 @@ on:
 jobs:
   deploy:
     runs-on: self-hosted
-
+    strategy: fail-fast: true
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
