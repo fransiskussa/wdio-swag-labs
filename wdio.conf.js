@@ -1,7 +1,7 @@
 exports.config = {
     maxInstances: 1,
-    specs: ['./test/specs/test.e2e.js'],
-    // specs: ['./test/specs/*.js'],
+    // specs: ['./test/specs/test.e2e.js'],
+    specs: ['./test/specs/*.js'],
     capabilities: [{
         platformName: "Android",
                 "appium:deviceName": "GIZPKF6TOFVWW4IV",
