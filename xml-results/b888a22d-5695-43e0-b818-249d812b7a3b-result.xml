@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<AllureResults>
+  <uuid>b888a22d-5695-43e0-b818-249d812b7a3b</uuid>
+  <historyId>817b707f2009513bc824e261f3e1b43f</historyId>
+  <status>passed</status>
+  <statusDetails>[object Object]</statusDetails>
+  <stage>finished</stage>
+  <steps>[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]</steps>
+  <attachments/>
+  <parameters>[object Object]</parameters>
+  <labels>[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]</labels>
+  <links/>
+  <start>1742380346445</start>
+  <name>should automate Alfagift app</name>
+  <testCaseId>817b707f2009513bc824e261f3e1b43f</testCaseId>
+  <stop>1742380371450</stop>
+</AllureResults>
