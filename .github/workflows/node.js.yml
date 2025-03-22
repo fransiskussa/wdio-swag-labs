@@ -1,0 +1,48 @@
+name: Appium WebdriverIO Tests
+
+on:
+  pull_request:
+    branches:
+      - main  # Hanya berjalan pada Pull Request ke branch main
+
+jobs:
+  test:
+    runs-on: self-hosted
+    strategy: fail-fast: true
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        run: npm install
+
+      # ⬇️ **Tambahkan langkah ini untuk install driver Appium yang hilang**
+      - name: Install Appium Driver (UiAutomator2)
+        run: |
+          npx appium driver install uiautomator2
+          npx appium driver list --installed # Verifikasi driver sudah terinstal
+
+      - name: Start Appium Server
+        run: |
+          Start-Process -NoNewWindow -FilePath "npx" -ArgumentList "appium" -PassThru
+
+      - name: Run WebdriverIO Tests
+        run: npx wdio wdio.conf.js
+
+      - name: Generate Allure Report
+        if: always()
+        run: npx allure generate allure-results --clean -o allure-report
+
+      - name: Run Convert Report to Excel
+        run: node convertAllureToExcel.js
+        
+      - name: Upload Allure Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-test-results.xlsx
+          path: report-excel
