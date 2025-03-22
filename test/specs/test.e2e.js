@@ -109,7 +109,6 @@ describe('Swag_Labs App Automation', () => {
 
             const el18 = await driver.$("accessibility id:test-BACK HOME");
             await el18.click();
-            
             allure.addTestId('TC001');
 
         } catch (error) {
